@@ -1,5 +1,6 @@
 FROM alpine:3.15
 
+
 ENV PHP_FPM_HOST php7-fpm
 ENV PHP_FPM_PORT  9002
 ENV SERVER_NAME  localhost

@@ -1,11 +1,12 @@
 FROM alpine:3.15
-
+LABEL maintainer="Yosviel Dominguez <ydominguezg@uci.cu>"
 
 ENV PHP_FPM_HOST php7-fpm
 ENV PHP_FPM_PORT  9002
 ENV SERVER_NAME  localhost
 
-LABEL maintainer="Yosviel Dominguez <ydominguezg@uci.cu>"
+ADD nginx.conf /etc/nginx/
+ADD symfony.conf /etc/nginx/conf.d/
 
 RUN apk add --update nginx
 RUN rm -rf /var/cache/apk/* && rm -rf /tmp/*

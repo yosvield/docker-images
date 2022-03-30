@@ -3,10 +3,10 @@ Docker Images NGINX SYMFONY
 [![Docker Repository on Quay](https://quay.io/repository/yosvield/nginx-symfony/status "Docker Repository on Quay")](https://quay.io/repository/yosvield/nginx-symfony)
 
 Image of nginx for symfony 3.*
-##Pull
+### Pull
 `docker pull docker.prod.uci.cu/quay.io/yosvield/nginx-symfony:1.3.4`
 
-##Usage in Docker composer 
+### Usage in Docker composer 
 ```
 version: "2"
 
@@ -20,10 +20,10 @@ services:
             - php
 ```
 
-##Enviroment
+### Enviroment
 `PHP_HOST`: Service of php-fpm. Default `php`
 
-##Custom usage
+### Custom usage
 ```
 version: "2"
 
@@ -42,7 +42,7 @@ services:
             - php_fpm
 ```
 
-##Example
+### Example
 ```
 version: "2"
 

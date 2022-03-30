@@ -11,4 +11,6 @@ COPY default.conf /etc/nginx/conf.d/
 
 RUN apk add --no-cache bash
 
+RUN ["chmod", "+x", "/usr/local/bin/start.sh"]
+
 CMD ["/usr/local/bin/start.sh"]

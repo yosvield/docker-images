@@ -21,7 +21,10 @@ services:
 ```
 
 ### Enviroment
+`SERVER_NAME`: Server name. Default `localhost`
+`SERVER_ROOT`: Root public of app. Default `/app/web`
 `PHP_HOST`: Service of php-fpm. Default `php`
+`PHP_PORT`: Port of service of php-fpm. Default `9000`
 
 ### Custom usage
 ```
@@ -37,7 +40,10 @@ services:
             - /paht/to/symfony.conf:/etc/nginx/conf.d/default.conf:ro
             - /paht/to/nginx.conf:/etc/nginx/nginx.conf:ro
         environment:
+           SERVER_NAME: "example.com"    
+           SERVER_ROOT: "/app/public"    
            PHP_HOST: "php_fpm"    
+           PHP_PORT: "9001"    
         depends_on:
             - php_fpm
 ```

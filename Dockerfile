@@ -2,7 +2,11 @@ FROM nginx:stable-alpine
 LABEL maintainer="Yosviel Dominguez <yosvield@gmail.com>"
 
 ENV PS1="\u@\h:\w\\$ "
+ENV SERVER_NAME localhost
+ENV SERVER_ROOT /app/web
 ENV PHP_HOST php
+ENV PHP_PORT 9000
+
 
 ADD start.sh /usr/local/bin/
 

@@ -2,7 +2,7 @@ FROM nginx:stable-alpine
 LABEL maintainer="Yosviel Dominguez <yosvield@gmail.com>"
 
 ENV PS1="\u@\h:\w\\$ "
-ENV PHP_HOST php
+ENV PHP_HOST="php"
 
 COPY nginx.conf /etc/nginx/
 COPY default.conf /etc/nginx/conf.d/

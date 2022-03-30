@@ -4,7 +4,7 @@ Docker Images NGINX SYMFONY
 
 Image of nginx for symfony 3.*
 ### Pull
-`docker pull docker.prod.uci.cu/quay.io/yosvield/nginx-symfony:1.3.4`
+`docker pull docker.prod.uci.cu/quay.io/yosvield/nginx-symfony:1.3.5`
 
 ### Usage in Docker composer 
 ```
@@ -13,7 +13,7 @@ version: "2"
 services:
     ...
     api:
-        image: docker.prod.uci.cu/quay.io/yosvield/nginx-symfony:1.3.4
+        image: docker.prod.uci.cu/quay.io/yosvield/nginx-symfony:1.3.5
         ports:
             - 82:80
         depends_on:
@@ -33,7 +33,7 @@ version: "2"
 services:
     ...
     api:
-        image: docker.prod.uci.cu/quay.io/yosvield/nginx-symfony:1.3.4
+        image: docker.prod.uci.cu/quay.io/yosvield/nginx-symfony:1.3.5
         ports:
             - 82:80
         volumes:
@@ -63,7 +63,7 @@ services:
       APP_DEBUG: "false"
       
   api:
-    image: docker.prod.uci.cu/quay.io/yosvield/nginx-symfony:1.3.4
+    image: docker.prod.uci.cu/quay.io/yosvield/nginx-symfony:1.3.5
     restart: always
     ports:
       - 82:80

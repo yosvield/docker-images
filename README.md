@@ -2,9 +2,9 @@ Docker Images NGINX SYMFONY
 ========================
 [![Docker Repository on Quay](https://quay.io/repository/yosvield/nginx-symfony/status "Docker Repository on Quay")](https://quay.io/repository/yosvield/nginx-symfony)
 
-Image of nginx for symfony 3.*
+Image of nginx for symfony 4.*, 5.*, 6.*
 ### Pull
-`docker pull docker.prod.uci.cu/quay.io/yosvield/nginx-symfony:1.3.5`
+`docker pull docker.prod.uci.cu/quay.io/yosvield/nginx-symfony:1.0.0`
 
 ### Usage in Docker composer 
 ```
@@ -13,7 +13,7 @@ version: "2"
 services:
     ...
     api:
-        image: docker.prod.uci.cu/quay.io/yosvield/nginx-symfony:1.3.5
+        image: docker.prod.uci.cu/quay.io/yosvield/nginx-symfony:1.0.0
         ports:
             - 82:80
         depends_on:
@@ -22,7 +22,7 @@ services:
 
 ### Enviroment
 `SERVER_NAME`: Server name. Default `localhost`
-`SERVER_ROOT`: Root public of app. Default `/app/web`
+`SERVER_ROOT`: Root public of app. Default `/app/public`
 `PHP_HOST`: Service of php-fpm. Default `php`
 `PHP_PORT`: Port of service of php-fpm. Default `9000`
 
@@ -33,7 +33,7 @@ version: "2"
 services:
     ...
     api:
-        image: docker.prod.uci.cu/quay.io/yosvield/nginx-symfony:1.3.5
+        image: docker.prod.uci.cu/quay.io/yosvield/nginx-symfony:1.0.0
         ports:
             - 82:80
         volumes:
@@ -63,7 +63,7 @@ services:
       APP_DEBUG: "false"
       
   api:
-    image: docker.prod.uci.cu/quay.io/yosvield/nginx-symfony:1.3.5
+    image: docker.prod.uci.cu/quay.io/yosvield/nginx-symfony:1.0.0
     restart: always
     ports:
       - 82:80

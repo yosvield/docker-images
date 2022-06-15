@@ -3,7 +3,7 @@ ARG TIMEZONE=America/Havana
 
 LABEL maintainer="Yosviel Dominguez <ydominguezg@uci.cu>"
 
-RUN echo 'deb [trusted=yes] https://repo.symfony.com/apt/ /' | sudo tee /etc/apt/sources.list.d/symfony-cli.list
+RUN echo 'deb [trusted=yes] https://repo.symfony.com/apt/ /' | tee /etc/apt/sources.list.d/symfony-cli.list
 RUN apt-get update && apt-get install -y \
     openssl \
     zip \

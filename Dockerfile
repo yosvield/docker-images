@@ -84,4 +84,6 @@ RUN echo "[global]" >> /usr/local/etc/php-fpm.d/symfony.ini \
 
 #RUN echo 'alias sf3="php bin/console"' >> ~/.bashrc
 
+RUN php -v
+
 WORKDIR /

@@ -1,7 +1,7 @@
 FROM php:7.4-fpm
 ARG TIMEZONE=America/Havana
 
-LABEL maintainer="Yosviel Dominguez <ydominguezg@uci.cu>"
+LABEL maintainer="Yosviel Dominguez <yosvield@gmail.com>"
 
 RUN echo 'deb [trusted=yes] https://repo.symfony.com/apt/ /' | tee /etc/apt/sources.list.d/symfony-cli.list
 RUN apt-get update && apt-get install -y \

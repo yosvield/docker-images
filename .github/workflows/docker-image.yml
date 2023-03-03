@@ -28,4 +28,4 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: ${{ secrets.DOCKER_HUB_USERNAME }}/php8-fpm:latest
+        tags: ${{ secrets.DOCKER_HUB_USERNAME }}/php-fpm:latest

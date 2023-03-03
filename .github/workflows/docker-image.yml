@@ -3,7 +3,7 @@ name: Docker Image CI
 on:
   push:
     branches:
-      - 'php7-fpm'
+      - 'php8-fpm'
 
 jobs:
   build:
@@ -28,4 +28,4 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: ${{ secrets.DOCKER_HUB_USERNAME }}/php7-fpm:latest
+        tags: ${{ secrets.DOCKER_HUB_USERNAME }}/php8-fpm:latest

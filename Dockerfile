@@ -1,19 +1,7 @@
-FROM alpine:3.15
+FROM mcr.microsoft.com/dotnet/sdk:6.0
+MAINTAINER Yosviel Dominguez Gonzalez <yosvield@gmail.com>
 
-ENV PHP_FPM_HOST php7-fpm
-ENV PHP_FPM_PORT  9002
-ENV SERVER_NAME  localhost
-
-LABEL maintainer="Yosviel Dominguez <ydominguezg@uci.cu>"
-
-RUN apk add --update nginx
-RUN rm -rf /var/cache/apk/* && rm -rf /tmp/*
-
-RUN adduser -D -g '' -G www-data www-data
-
-CMD sed -i.bak s/PHP_FPM_HOST/$PHP_FPM_HOST/g /etc/nginx/conf.d/symfony.conf && sed -i.bak s/PHP_FPM_PORT/$PHP_FPM_PORT/g /etc/nginx/conf.d/symfony.conf && sed -i.bak s/SERVER_NAME/$SERVER_NAME/g /etc/nginx/conf.d/symfony.conf && nginx
-
-CMD ["nginx"]
-
-EXPOSE 80
-EXPOSE 443
+ENV http_proxy=http://10.128.50.3:2568 \
+    https_proxy=http://10.128.50.3:2568 \
+    ftp_proxy=http://10.128.50.3:2568 \
+    no_proxy=localhost,127.0.0.1,.uci.cu,10.0.0.0/8

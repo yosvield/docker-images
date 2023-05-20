@@ -1,7 +1,5 @@
-FROM mcr.microsoft.com/dotnet/aspnet:6.0
+FROM node:16.17
 MAINTAINER Yosviel Dominguez Gonzalez <yosvield@gmail.com>
-
-RUN apt-get update && apt-get install -y libfontconfig1
 
 ENV http_proxy=http://10.128.50.3:2568 \
     https_proxy=http://10.128.50.3:2568 \

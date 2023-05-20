@@ -1,9 +1,9 @@
-name: Docker Image aspnet
+name: Docker Image node
 
 on:
   push:
     branches:
-      - 'aspnet'
+      - 'node'
 
 jobs:
   build:
@@ -28,4 +28,4 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: ${{ secrets.DOCKER_HUB_USERNAME }}/aspnet:6.0
+        tags: ${{ secrets.DOCKER_HUB_USERNAME }}/node:16.17

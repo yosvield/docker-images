@@ -1,6 +1,6 @@
 Docker Images Node
 ========================
-[![Docker Repository on Quay](https://quay.io/repository/yosvield/aspnet/status "Docker Repository on Quay")](https://quay.io/repository/yosvield/aspnet)
+[![Docker Repository](https://github.com/yosvield/docker-images/actions/workflows/docker-image.yml/badge.svg?branch=node "Docker Repository")](https://hub.docker.com/repository/docker/yosvield/node/general)
 
 ```
 FROM node:16.17

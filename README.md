@@ -1,6 +1,6 @@
 Docker Images Node
 ========================
-[![Docker Repository](https://github.com/yosvield/docker-images/actions/workflows/docker-image.yml/badge.svg?branch=node "Docker Repository")](https://hub.docker.com/repository/docker/yosvield/node/general)
+[![Docker Repository](https://github.com/yosvield/docker-images/actions/workflows/docker-image.yml/badge.svg?branch=node&event=push "Docker Repository")](https://hub.docker.com/repository/docker/yosvield/node/general)
 
 ```
 FROM node:16.17

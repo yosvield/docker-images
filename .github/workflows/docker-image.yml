@@ -1,9 +1,9 @@
-name: Docker Image node
+name: Docker Image wso2mi-dasboard
 
 on:
   push:
     branches:
-      - 'node'
+      - 'wso2mi-dasboard'
 
 jobs:
   build:
@@ -28,4 +28,4 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: ${{ secrets.DOCKER_HUB_USERNAME }}/node:14.15.0
+        tags: ${{ secrets.DOCKER_HUB_USERNAME }}/wso2mi-dasboard:latest

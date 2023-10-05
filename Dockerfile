@@ -57,7 +57,7 @@ RUN docker-php-ext-configure intl \
 #    && echo "opcache.enable=1" >> /usr/local/etc/php/conf.d/opcache.ini
 
 # install and config xdebug
-RUN pecl install xdebug \
+RUN pecl install xdebug-3.1.6 \
 && docker-php-ext-enable xdebug \
 && echo ";xdebug.mode=debug" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
 && echo ";xdebug.start_with_request=yes" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \

@@ -86,4 +86,4 @@ RUN echo "[global]" >> /usr/local/etc/php-fpm.d/symfony.ini \
 
 RUN php -v
 
-WORKDIR /
+WORKDIR /app

@@ -1,4 +1,4 @@
-Docker Images PHP7 FPM SYMFONY
+Docker Images PHP8 FPM SYMFONY
 ========================
 [![Docker Repository on Quay](https://quay.io/repository/yosvield/php-fpm/status "Docker Repository on Quay")](https://quay.io/repository/yosvield/php-fpm)
 
@@ -13,7 +13,7 @@ version: "2"
 
 services:
   php:
-    image: docker.prod.uci.cu/quay.io/yosvield/php-fpm:latest
+    image: docker.prod.uci.cu/quay.io/yosvield/php-fpm:8.2
     restart: always
     volumes:
       - /path/to/app:/app

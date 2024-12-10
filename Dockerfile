@@ -72,9 +72,9 @@ RUN echo "memory_limit=-1" >> /usr/local/etc/php/conf.d/php.ini \
 && echo "upload_max_filesize=6M" >> /usr/local/etc/php/conf.d/php.ini \
 && echo "max_execution_time=500" >> /usr/local/etc/php/conf.d/php.ini \
 && echo "short_open_tag=off" >> /usr/local/etc/php/conf.d/php.ini \
-&& echo "expose_php=off" >> /usr/local/etc/php/conf.d/php.ini \
-&& echo "realpath_cache_size=4096k" >> /usr/local/etc/php/conf.d/php.ini \
-&& echo "realpath_cache_ttl=600" >> /usr/local/etc/php/conf.d/php.ini
+&& echo "expose_php=off" >> /usr/local/etc/php/conf.d/php.ini
+#&& echo "realpath_cache_size=4096k" >> /usr/local/etc/php/conf.d/php.ini \
+#&& echo "realpath_cache_ttl=600" >> /usr/local/etc/php/conf.d/php.ini
 
 #config pool www
 RUN echo "[global]" >> /usr/local/etc/php-fpm.d/symfony.ini \

@@ -46,26 +46,26 @@ RUN docker-php-ext-configure intl \
     && docker-php-ext-enable gd
 
 # install and config opcache
-RUN docker-php-ext-configure opcache --enable-opcache \
-    && docker-php-ext-install opcache \
-    && echo "opcache.enable=1" >> /usr/local/etc/php/conf.d/opcache.ini \
-    && echo "opcache.enable_cli=1" >> /usr/local/etc/php/conf.d/opcache.ini \
-    && echo "opcache.jit_buffer_size=500000000" >> /usr/local/etc/php/conf.d/opcache.ini \
-    && echo "opcache.jit=1235" >> /usr/local/etc/php/conf.d/opcache.ini \
-    && echo "opcache.validate_timestamps=0" >> /usr/local/etc/php/conf.d/opcache.ini \
-    && echo "opcache.memory_consumption=256" >> /usr/local/etc/php/conf.d/opcache.ini \
-    && echo "opcache.max_accelerated_files=20000" >> /usr/local/etc/php/conf.d/opcache.ini
+#RUN docker-php-ext-configure opcache --enable-opcache \
+ #   && docker-php-ext-install opcache \
+  #  && echo "opcache.enable=1" >> /usr/local/etc/php/conf.d/opcache.ini \
+   # && echo "opcache.enable_cli=1" >> /usr/local/etc/php/conf.d/opcache.ini \
+    #&& echo "opcache.jit_buffer_size=500000000" >> /usr/local/etc/php/conf.d/opcache.ini \
+    #&& echo "opcache.jit=1235" >> /usr/local/etc/php/conf.d/opcache.ini \
+    #&& echo "opcache.validate_timestamps=0" >> /usr/local/etc/php/conf.d/opcache.ini \
+    #&& echo "opcache.memory_consumption=256" >> /usr/local/etc/php/conf.d/opcache.ini \
+    #&& echo "opcache.max_accelerated_files=20000" >> /usr/local/etc/php/conf.d/opcache.ini
 
 # install and config xdebug
-#RUN pecl install xdebug \
-#&& docker-php-ext-enable xdebug \
-#&& echo ";xdebug.mode=debug" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
-#&& echo ";xdebug.start_with_request=yes" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
-#&& echo ";xdebug.remote_handler=dbgp" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
-#&& echo ";xdebug.remote_mode=req" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
-#&& echo ";xdebug.client_host=172.17.0.1" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
-#&& echo ";xdebug.client_port=9003" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
-#&& echo ";xdebug.max_nesting_level=1000" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+RUN pecl install xdebug \
+&& docker-php-ext-enable xdebug \
+&& echo ";xdebug.mode=debug" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
+&& echo ";xdebug.start_with_request=yes" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
+&& echo ";xdebug.remote_handler=dbgp" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
+&& echo ";xdebug.remote_mode=req" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
+&& echo ";xdebug.client_host=172.17.0.1" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
+&& echo ";xdebug.client_port=9003" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
+&& echo ";xdebug.max_nesting_level=1000" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 
 # config php
 RUN echo "memory_limit=-1" >> /usr/local/etc/php/conf.d/php.ini \

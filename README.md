@@ -3,7 +3,7 @@ Docker Images from sdk .Net
 [![Docker Repository on Quay](https://quay.io/repository/yosvield/sdk/status "Docker Repository on Quay")](https://quay.io/repository/yosvield/sdk)
 
 ```
-FROM mcr.microsoft.com/dotnet/sdk:6.0
+FROM mcr.microsoft.com/dotnet/sdk:8.0
 MAINTAINER Yosviel Dominguez Gonzalez <yosvield@gmail.com>
 
 ENV http_proxy=http://10.128.50.3:2568 \

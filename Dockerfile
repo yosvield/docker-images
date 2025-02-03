@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/aspnet:6.0
+FROM mcr.microsoft.com/dotnet/aspnet:8.0
 MAINTAINER Yosviel Dominguez Gonzalez <yosvield@gmail.com>
 
 RUN apt-get update && apt-get install -y libfontconfig1

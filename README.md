@@ -1,6 +1,7 @@
 Docker Images from sdk .Net
 ========================
 [![Docker Repository on Quay](https://quay.io/repository/yosvield/sdk/status "Docker Repository on Quay")](https://quay.io/repository/yosvield/sdk)
+[![Docker Pulls](https://img.shields.io/docker/pulls/yosvield/sdk)](https://hub.docker.com/r/yosvield/sdk)
 
 ```
 FROM mcr.microsoft.com/dotnet/sdk:8.0
@@ -17,8 +18,8 @@ ENV http_proxy=http://10.128.50.3:2568 \
 The Docker image is published to Docker Hub and can be pulled and run using the following commands:
 
 ```
-docker pull <your-docker-username>/sdk:latest
-docker run -it <your-docker-username>/sdk:latest
+docker pull yosvield/sdk:8.0
+docker run -it yosvield/sdk:8.0
 ```
 
 Replace `<your-docker-username>` with your actual Docker Hub username.
@@ -26,5 +27,5 @@ Replace `<your-docker-username>` with your actual Docker Hub username.
 You can also use the image in your `Dockerfile`:
 
 ```
-FROM <your-docker-username>/sdk:latest
+FROM yosvield/sdk:8.0
 ```

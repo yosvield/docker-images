@@ -1,5 +1,6 @@
 Docker Images from sdk .Net
 ========================
+!GitHub Actions Status
 [![Docker Repository on Quay](https://quay.io/repository/yosvield/sdk/status "Docker Repository on Quay")](https://quay.io/repository/yosvield/sdk)
 [![Docker Pulls](https://img.shields.io/docker/pulls/yosvield/sdk)](https://hub.docker.com/r/yosvield/sdk)
 

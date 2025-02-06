@@ -8,8 +8,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libharfbuzz0b \
     && rm -rf /var/lib/apt/lists/*
 
-RUN apt-get install -y --no-install-recommends libpng16-16
-
 ENV http_proxy=http://10.128.50.3:2568 \
     https_proxy=http://10.128.50.3:2568 \
     ftp_proxy=http://10.128.50.3:2568 \

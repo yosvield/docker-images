@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libfreetype6 \
     libharfbuzz0b \
     libpng16-16 \
-    libjpeg-turbo8 \
+    libjpeg62-turbo \
     libwebp6 \
     libx11-6 \
     libxext6 \

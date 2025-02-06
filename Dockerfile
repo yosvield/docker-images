@@ -6,13 +6,14 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libfontconfig1 \
     libfreetype6 \
     libharfbuzz0b \
-    libpng16-16 \
-    libjpeg62-turbo \
-    libwebp6 \
-    libx11-6 \
-    libxext6 \
-    libxrender1 \
     && rm -rf /var/lib/apt/lists/*
+
+RUN apt-get install -y --no-install-recommends libpng16-16
+RUN apt-get install -y --no-install-recommends libjpeg62-turbo
+RUN apt-get install -y --no-install-recommends libwebp6
+RUN apt-get install -y --no-install-recommends libx11-6
+RUN apt-get install -y --no-install-recommends libxext6
+RUN apt-get install -y --no-install-recommends libxrender1
 
 ENV http_proxy=http://10.128.50.3:2568 \
     https_proxy=http://10.128.50.3:2568 \

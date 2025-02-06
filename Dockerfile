@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libwebp6 \
     libx11-6 \
     libxext6 \
-    libxrender1
+    libxrender1 \
     && rm -rf /var/lib/apt/lists/*
 
 ENV http_proxy=http://10.128.50.3:2568 \

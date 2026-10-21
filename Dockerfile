@@ -48,15 +48,15 @@ RUN docker-php-ext-configure intl \
     && docker-php-ext-enable gd
 
 # install and config opcache
-#RUN docker-php-ext-configure opcache --enable-opcache \
-#   && docker-php-ext-install opcache \
- #   && echo "opcache.enable=1" >> /usr/local/etc/php/conf.d/opcache.ini \
-  #  && echo "opcache.enable_cli=1" >> /usr/local/etc/php/conf.d/opcache.ini \
-   # && echo "opcache.jit_buffer_size=500000000" >> /usr/local/etc/php/conf.d/opcache.ini \
-   # && echo "opcache.jit=1235" >> /usr/local/etc/php/conf.d/opcache.ini \
-   # && echo "opcache.validate_timestamps=0" >> /usr/local/etc/php/conf.d/opcache.ini \
-   # && echo "opcache.memory_consumption=256" >> /usr/local/etc/php/conf.d/opcache.ini \
-   # && echo "opcache.max_accelerated_files=20000" >> /usr/local/etc/php/conf.d/opcache.ini
+RUN docker-php-ext-configure opcache --enable-opcache \
+   && docker-php-ext-install opcache \
+    && echo "opcache.enable=1" >> /usr/local/etc/php/conf.d/opcache.ini \
+    && echo "opcache.enable_cli=1" >> /usr/local/etc/php/conf.d/opcache.ini \
+    && echo "opcache.jit_buffer_size=500000000" >> /usr/local/etc/php/conf.d/opcache.ini \
+    && echo "opcache.jit=1235" >> /usr/local/etc/php/conf.d/opcache.ini \
+    && echo "opcache.validate_timestamps=0" >> /usr/local/etc/php/conf.d/opcache.ini \
+    && echo "opcache.memory_consumption=256" >> /usr/local/etc/php/conf.d/opcache.ini \
+    && echo "opcache.max_accelerated_files=20000" >> /usr/local/etc/php/conf.d/opcache.ini
 
 # install and config xdebug
 RUN pecl install xdebug \

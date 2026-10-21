@@ -3,7 +3,10 @@ ARG TIMEZONE=America/Havana
 
 LABEL maintainer="Yosviel Dominguez <yosvield@gmail.com>"
 
-RUN echo 'deb [trusted=yes] https://repo.symfony.com/apt/ /' | tee /etc/apt/sources.list.d/symfony-cli.list
+# 1. Copiamos el binario de Symfony CLI directamente desde la imagen oficial (Nueva forma oficial)
+COPY --link --from=ghcr.io/symfony-cli/symfony-cli:latest /usr/local/bin/symfony /usr/local/bin/symfony
+
+# 2. Instalamos las dependencias del sistema (Se remueve la configuración del repositorio antiguo y el paquete symfony-cli)
 RUN apt-get update && apt-get install -y \
     openssl \
     zip \
@@ -20,8 +23,7 @@ RUN apt-get update && apt-get install -y \
     libicu-dev \
     locales \
     libpng-dev \
-    g++ \
-    symfony-cli
+    g++
 
 RUN printf 'es_ES.UTF-8 UTF-8\n' >> /etc/locale.gen \
     && locale-gen
@@ -73,8 +75,6 @@ RUN echo "memory_limit=-1" >> /usr/local/etc/php/conf.d/php.ini \
 && echo "max_execution_time=500" >> /usr/local/etc/php/conf.d/php.ini \
 && echo "short_open_tag=off" >> /usr/local/etc/php/conf.d/php.ini \
 && echo "expose_php=off" >> /usr/local/etc/php/conf.d/php.ini
-#&& echo "realpath_cache_size=4096k" >> /usr/local/etc/php/conf.d/php.ini \
-#&& echo "realpath_cache_ttl=600" >> /usr/local/etc/php/conf.d/php.ini
 
 #config pool www
 RUN echo "[global]" >> /usr/local/etc/php-fpm.d/symfony.ini \
@@ -83,8 +83,6 @@ RUN echo "[global]" >> /usr/local/etc/php-fpm.d/symfony.ini \
 && echo "process_control_timeout = 10s" >> /usr/local/etc/php-fpm.d/symfony.ini \
 && echo "[www]" >> /usr/local/etc/php-fpm.d/symfony.ini \
 && echo "pm.max_children = 20" >> /usr/local/etc/php-fpm.d/symfony.ini
-
-#RUN echo 'alias sf3="php bin/console"' >> ~/.bashrc
 
 RUN php -v
 
